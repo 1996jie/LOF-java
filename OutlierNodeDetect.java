@@ -278,10 +278,11 @@ public class OutlierNodeDetect {
         	 OutlierNodeDetect lof = new OutlierNodeDetect();
         	 // bagging for k
         	 int[] k = {5,6,7,9,12,15,20,25};
+		 List<DataNode> nodeList = null;
         	 for (int l = 0; l < k.length; l++){
         		 Date datestart1 = new Date();
         	     lof.setK(k[l]);
-        	     List<DataNode> nodeList = lof.getOutlierNode(dpoints); 
+        	     nodeList = lof.getOutlierNode(dpoints); 
         	     Date dateend1 = new Date();
         	     long gap1 = dateend1.getTime() - datestart1.getTime();
         	     System.out.println(gap1);
@@ -305,4 +306,4 @@ public class OutlierNodeDetect {
         }
           
     }  
- 
+ }
